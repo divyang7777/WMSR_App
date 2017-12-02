@@ -1,0 +1,8 @@
+{
+  "name": "WMSR_app",
+  "app_id": "44cf7711",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
