@@ -1,18 +1,52 @@
-<!--
-  Generated template for the ModalIndustryPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>ModalIndustry</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <ion-title>Needed water for the Industry Usage fill the details below.</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <form (ngSubmit) = "savefactory()">
+  
+    <ion-item>
+      <ion-label>Amount of water needed</ion-label>
+      <ion-select [(ngModel)]="members" name="members">
+        <ion-option value="1000l">1000l</ion-option>
+        <ion-option value="2000l">2000l</ion-option>
+        <ion-option value="3000l">3000l</ion-option>
+        <ion-option value="4000l">4000l</ion-option>
+        <ion-option value="5000l">5000l</ion-option>
+        <ion-option value="6000l">6000l</ion-option>
+        <ion-option value="7000l">7000l</ion-option>
+        <ion-option value="8000l">8000l</ion-option>
+        <ion-option value="9000l">9000l</ion-option>
+        <ion-option value="10000l">10000l</ion-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Industry Name :</ion-label>
+      <ion-input type="text" [(ngModel)] = "name" name = "name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Summary :</ion-label>
+      <ion-input type="text" [(ngModel)] = "summary" name = "summary"></ion-input>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label floating>Type :</ion-label>
+      <ion-input type="text" [(ngModel)] = "type" name = "type"></ion-input>
+    </ion-item>
+  
+    <br><br><br><br>
+  
+    <button ion-button large round type="submit">Request Water</button>
+    
+  </form>
+  
+  </ion-content>
+  

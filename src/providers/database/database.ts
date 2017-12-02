@@ -27,8 +27,20 @@ export class DatabaseProvider {
     };
   }
 
-  addIndustry(){
-
+  addIndustry(data){
+    console.log(data);
+    var body = {
+      "type": "insert", 
+      "args": {
+        "table": "Industry", 
+        "objects": [{
+          "username": data.name,
+          "members": data.members,
+          "summary": data.summary,
+          "type": data.type
+        }]
+      }
+    };
   }
 
 }
