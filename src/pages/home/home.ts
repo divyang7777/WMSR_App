@@ -11,4 +11,12 @@ export class HomePage {
 
   }
 
+  GetModalHome(){
+
+  }
+
+  GetModalIndustry(){
+    
+  }
+
 }
