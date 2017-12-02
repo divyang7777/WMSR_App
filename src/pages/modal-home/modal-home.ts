@@ -19,7 +19,9 @@ export class ModalHomePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public DatabaseProvider: DatabaseProvider
-  ) {
+  ) 
+  {
+  
   }
 
   ionViewDidLoad() {
@@ -32,7 +34,6 @@ export class ModalHomePage {
       'members': this.members, 
       'name':  this.name,
       'summary': this.summary,
-      // 'userid': this.userid, 
       'area': this.area };
       
       this.DatabaseProvider.addHome(text)
@@ -41,6 +42,7 @@ export class ModalHomePage {
         }, (err) => {
           console.log(err);
         });
+
         this.navCtrl.setRoot(HomePage); 
      
   
