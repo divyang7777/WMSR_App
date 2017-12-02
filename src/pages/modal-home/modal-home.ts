@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ModalHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from '../home/home';
+import { DatabaseProvider } from "../../providers/database/database";
 
 @IonicPage()
 @Component({
@@ -15,11 +10,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  area: any;
+  summary: any;
+  name: any;
+  members: any;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public DatabaseProvider: DatabaseProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ModalHomePage');
+  }
+
+  savemember(){
+
+    const text = { 
+      'members': this.members, 
+      'name':  this.name,
+      'summary': this.summary,
+      // 'userid': this.userid, 
+      'area': this.area };
+      
+      this.DatabaseProvider.addHome(text)
+      .then(data => {
+          console.log(data);
+        }, (err) => {
+          console.log(err);
+        });
+        this.navCtrl.setRoot(HomePage); 
+     
+  
   }
 
 }

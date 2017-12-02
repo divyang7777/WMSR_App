@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ModalHomePage } from "../pages/modal-home/modal-home";
 import { ModalIndustryPage } from "../pages/modal-industry/modal-industry";
+import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ModalIndustryPage } from "../pages/modal-industry/modal-industry";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider
   ]
 })
 export class AppModule {}
