@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DatabaseProvider } from "../../providers/database/database";
+import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,8 @@ export class ModalHomePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public DatabaseProvider: DatabaseProvider
+    public DatabaseProvider: DatabaseProvider,
+    public toastCtrl: ToastController
   ) 
   {
   
@@ -32,4 +34,14 @@ export class ModalHomePage {
 
   }
 
+  showToast(){
+    let toast = this.toastCtrl
+    .create({
+      message: 'Your Water is on the way, Stay tunned !!!',
+      showCloseButton: true,
+      closeButtonText: 'Ok'
+    });
+    toast.present();
+   }
+   
 }
