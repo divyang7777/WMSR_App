@@ -12,35 +12,11 @@ export class DatabaseProvider {
   }
 
   addHome(data) {
-    console.log(data);
-    var body = {
-      "type": "insert", 
-      "args": {
-        "table": "Home", 
-        "objects": [{
-          "username": data.name,
-          "members": data.members,
-          "summary": data.summary,
-          "area": data.area
-        }]
-      }
-    };
+    
   }
 
   addIndustry(data){
-    console.log(data);
-    var body = {
-      "type": "insert", 
-      "args": {
-        "table": "Industry", 
-        "objects": [{
-          "username": data.name,
-          "members": data.members,
-          "summary": data.summary,
-          "type": data.type
-        }]
-      }
-    };
+    
   }
 
 }
