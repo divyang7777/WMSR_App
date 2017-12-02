@@ -10,7 +10,8 @@ import { ToastController } from 'ionic-angular/components/toast/toast-controller
   templateUrl: 'modal-home.html',
 })
 export class ModalHomePage {
-
+  
+  liters: any;
   area: any;
   summary: any;
   name: any;
@@ -32,6 +33,21 @@ export class ModalHomePage {
 
   savemember(){
 
+    const text = {
+
+      'members' : this.members,
+      'name' : this.name,
+      'summary' : this.summary,
+      'area' : this.area
+    };
+
+    this.DatabaseProvider.addHome(text)
+    .then(data => {
+      console.log(data);
+    }, (err) => {
+      console.log(err);
+    });
+  this.navCtrl.setRoot(HomePage);
   }
 
   showToast(){

@@ -26,7 +26,20 @@ export class ModalIndustryPage {
   
 
   savefactory(){
+
+    const text = { 
+    'members': this.members, 
+    'name':  this.name,
+    'summary': this.summary, 
+    'type': this.type };
     
+    this.DatabaseProvider.addIndustry(text)
+      .then(data => {
+        console.log(data);
+      }, (err) => {
+        console.log(err);
+      });
+      this.navCtrl.setRoot(HomePage); 
   }
   
   showToast(){

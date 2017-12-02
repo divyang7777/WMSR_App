@@ -10,6 +10,7 @@
 
   <form (ngSubmit) = "savemember()">
 
+    
   <ion-item>
     <ion-label>Amount of water needed</ion-label>
     <ion-select [(ngModel)]="members" name="members">
@@ -24,6 +25,11 @@
       <ion-option value="9">90l</ion-option>
       <ion-option value="10">10l</ion-option>
     </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Need of water in Liters :</ion-label>
+    <ion-input type="number" [(ngModel)] = "liters" name = "liters"></ion-input>
   </ion-item>
 
   <ion-item>
